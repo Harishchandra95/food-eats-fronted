@@ -11,36 +11,38 @@ import OrderStatusPage from "./pages/OrderStatusPage";
 
 export const AppRoutes = () => {
     return (
-        <Routes>
-            <Route path="/" 
-            element=
-                {
-                    <Layout showHero>
-                        <HomePage/> 
-                    </Layout>
-                }
-            />
-            <Route path="/auth-callback" element={<AuthCallbackPage/>}/>
-            <Route path="/detail/:restaurantId" element={<Layout showHero={false}><DetailPage/></Layout>}/>
-            <Route path="/search/:city" element={<Layout showHero={false}><SearchPage/></Layout>}/>
-            <Route element={<ProtectedRoute/>}>
-                <Route path="/user-profile" element={
-                    <Layout>
-                        <UserProfilePage/>
-                    </Layout>
-                }/>
-                <Route path="/manage-restaurant" element={
-                    <Layout>
-                        <ManageRestaurantPage/>
-                    </Layout>
-                }/>
-                <Route path="/order-status" element={
-                    <Layout>
-                        <OrderStatusPage/>
-                    </Layout>
-                }/>
-            </Route>
-            <Route path="*" element={<Navigate to="/"/>}/>
-        </Routes>
+        <div className="dark:bg-slate-800">
+            <Routes>
+                <Route path="/" 
+                element=
+                    {
+                        <Layout showHero>
+                            <HomePage/> 
+                        </Layout>
+                    }
+                />
+                <Route path="/auth-callback" element={<AuthCallbackPage/>}/>
+                <Route path="/detail/:restaurantId" element={<Layout showHero={false}><DetailPage/></Layout>}/>
+                <Route path="/search/:city" element={<Layout showHero={false}><SearchPage/></Layout>}/>
+                <Route element={<ProtectedRoute/>}>
+                    <Route path="/user-profile" element={
+                        <Layout>
+                            <UserProfilePage/>
+                        </Layout>
+                    }/>
+                    <Route path="/manage-restaurant" element={
+                        <Layout>
+                            <ManageRestaurantPage/>
+                        </Layout>
+                    }/>
+                    <Route path="/order-status" element={
+                        <Layout>
+                            <OrderStatusPage/>
+                        </Layout>
+                    }/>
+                </Route>
+                <Route path="*" element={<Navigate to="/"/>}/>
+            </Routes>
+        </div>
     )
 };

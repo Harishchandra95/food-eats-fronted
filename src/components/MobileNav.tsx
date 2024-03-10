@@ -23,7 +23,7 @@ export default function MobileNav() {
               </span>
             ) 
             :
-            (<span> Welcome to MernEats.com </span>)
+            (<span> Welcome to Food Eats </span>)
         }
       </SheetTitle>
       <Separator/>
